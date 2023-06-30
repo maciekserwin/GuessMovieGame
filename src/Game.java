@@ -28,4 +28,10 @@ public class Game {
         return !hiddenTitle.toString().contains("_");
     }
 
+    public void displayGameStatus() {
+        System.out.println("Movie: " + hiddenTitle.toString());
+        System.out.println("Wrong guesses: " + wrongGuesses.toString());
+        System.out.println("Wrong guess count: " + wrongGuessCount);
+    }
+
 }
