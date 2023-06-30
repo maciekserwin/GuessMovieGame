@@ -1,19 +1,16 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class ListMovie {
 
-    private ArrayList <String> listMovies;
+    private final ArrayList <String> listMovies;
 
-    public ListMovie(ArrayList<String> listMovies) {
-        this.listMovies = listMovies;
-    }
-
-    private void ReadAllMoviesFromFile(String pathname) {
-        listMovies = new ArrayList();
-        File file = new File(pathname);
+    public ListMovie() {
+        listMovies = new ArrayList<>();
+        File file = new File("movies.txt");
         try {
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
@@ -23,4 +20,6 @@ public class ListMovie {
             System.out.println("File does not exist.");
         }
     }
+
+
 }
