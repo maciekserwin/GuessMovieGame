@@ -4,6 +4,18 @@ public class Game {
     private StringBuilder wrongGuesses;
     private int wrongGuessCount;
 
+
+    private void initializeHiddenTitle() {
+        for (int i = 0; i < movie.length(); i++) {
+            char c = movie.charAt(i);
+            if (Character.isLetter(c)) {
+                hiddenTitle.append('_');
+            } else {
+                hiddenTitle.append(c);
+            }
+        }
+    }
+
     public void guessLetter(char letter) {
         letter = Character.toLowerCase(letter);
         boolean correctGuess = false;
