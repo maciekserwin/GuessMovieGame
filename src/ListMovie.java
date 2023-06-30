@@ -21,5 +21,9 @@ public class ListMovie {
         }
     }
 
-
+    private String getRandomMovie() {
+        Random random = new Random();
+        int randomIndex = random.nextInt(listMovies.size());
+        return listMovies.get(randomIndex);
+    }
 }
