@@ -23,4 +23,9 @@ public class Game {
     public boolean isGameOver() {
         return wrongGuessCount >= 10;
     }
+
+    public boolean isGameWon() {
+        return !hiddenTitle.toString().contains("_");
+    }
+
 }
