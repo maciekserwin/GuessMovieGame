@@ -19,4 +19,8 @@ public class Game {
             }
         }
     }
+
+    public boolean isGameOver() {
+        return wrongGuessCount >= 10;
+    }
 }
