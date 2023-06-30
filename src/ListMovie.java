@@ -7,6 +7,10 @@ public class ListMovie {
 
     private ArrayList <String> listMovies;
 
+    public ListMovie(ArrayList<String> listMovies) {
+        this.listMovies = listMovies;
+    }
+
     private void ReadAllMoviesFromFile(String pathname) {
         listMovies = new ArrayList();
         File file = new File(pathname);
@@ -19,5 +23,4 @@ public class ListMovie {
             System.out.println("File does not exist.");
         }
     }
-
 }
