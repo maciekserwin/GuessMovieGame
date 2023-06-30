@@ -4,6 +4,13 @@ public class Game {
     private StringBuilder wrongGuesses;
     private int wrongGuessCount;
 
+    public Game(String movie) {
+        this.movie = movie.toLowerCase();
+        hiddenTitle = new StringBuilder(movie.length());
+        wrongGuesses = new StringBuilder();
+        wrongGuessCount = 0;
+        initializeHiddenTitle();
+    }
 
     private void initializeHiddenTitle() {
         for (int i = 0; i < movie.length(); i++) {
