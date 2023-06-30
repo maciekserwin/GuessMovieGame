@@ -4,6 +4,10 @@ public class InputReader {
 
     private Scanner scanner;
 
+    public InputReader() {
+        scanner = new Scanner(System.in);
+    }
+
     public char readGuess() {
         System.out.print("Enter your guess: ");
         String input = scanner.nextLine().toLowerCase();
