@@ -12,6 +12,10 @@ public class Game {
         initializeHiddenTitle();
     }
 
+    public String getHiddenTitle() {
+        return hiddenTitle.toString();
+    }
+
     private void initializeHiddenTitle() {
         for (int i = 0; i < movie.length(); i++) {
             char c = movie.charAt(i);
@@ -28,11 +32,13 @@ public class Game {
         boolean correctGuess = false;
         for (int i = 0; i < movie.length(); i++) {
             char c = movie.charAt(i);
-            if (Character.toLowerCase(c) == letter) {
+            if (Character.toLowerCase(c) == Character.toLowerCase(letter)) {
                 hiddenTitle.setCharAt(i, c);
                 correctGuess = true;
             }
-            if (!correctGuess) {
+        }
+        if (!correctGuess) {
+            if (wrongGuesses.indexOf(Character.toString(letter)) == -1) {
                 wrongGuesses.append(letter);
                 wrongGuessCount++;
             }
