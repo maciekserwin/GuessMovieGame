@@ -9,16 +9,6 @@ public class GuessMovieGame {
 
         InputReader inputReader = new InputReader();
 
-        while (!game.isGameOver() && !game.isGameWon()) {
-            game.displayGameStatus();
-            char guess = inputReader.readGuess();
-            game.guessLetter(guess);
-        }
-
-        if (game.isGameWon()) {
-            System.out.println("Congratulations! You guessed the movie correctly: " + game.getHiddenTitle());
-        } else {
-            System.out.println("Game over! The movie was: " + movie);
-        }
+        Game.displayGameStatus(movie, game, inputReader);
     }
 }

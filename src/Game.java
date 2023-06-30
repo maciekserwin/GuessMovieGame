@@ -53,10 +53,23 @@ public class Game {
         return !hiddenTitle.toString().contains("_");
     }
 
+    static void displayGameStatus(String movie, Game game, InputReader inputReader) {
+        while (!game.isGameOver() && !game.isGameWon()) {
+            game.displayGameStatus();
+            char guess = inputReader.readGuess();
+            game.guessLetter(guess);
+        }
+
+        if (game.isGameWon()) {
+            System.out.println("Congratulations! You guessed the movie correctly: " + game.getHiddenTitle());
+        } else {
+            System.out.println("Game over! The movie was: " + movie);
+        }
+    }
+
     public void displayGameStatus() {
         System.out.println("Movie: " + hiddenTitle.toString());
         System.out.println("Wrong guesses: " + wrongGuesses.toString());
         System.out.println("Wrong guess count: " + wrongGuessCount);
     }
-
 }

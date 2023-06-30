@@ -30,6 +30,4 @@ public class MovieList {
         int randomIndex = random.nextInt(movies.size());
         return movies.get(randomIndex);
     }
-
-
 }
